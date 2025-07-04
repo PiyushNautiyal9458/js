@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set time out</title>
+</head>
+<body>
+<h1>piyush how are u</h1>   
+<button id="but">stop</button> 
+</body>
+<script>
+    // setTimeout(function(){
+    //     console.log("hitesh")
+    // },3000)
+
+    // const piy=function(){
+    //     console.log("hello")
+    // }
+    // const ele=document.querySelector('H1').innerHTML="hello kaise aap log";
+    
+    
+    // setTimeout(piy,3000)
+
+    // const changeaftertwo=function(){
+    //     document.querySelector('H1').innerHTML="js series learning"
+    // }
+
+    // const changeaftertho=function(){
+    //     document.querySelector('H1').innerHTML="js series learning 2"
+    // }
+
+    // setTimeout(changeaftertwo,3000)
+    // setTimeout(changeaftertho,5000)
+
+
+    const stopafter5=function(){
+        document.querySelector('H1').innerHTML="changing the value"
+    }
+    const stopper=setTimeout(stopafter5,5000)
+    document.querySelector('#but').addEventListener('click',function(){
+        clearTimeout(stopper)
+        console.log("done")
+    })
+</script>
+</html>
