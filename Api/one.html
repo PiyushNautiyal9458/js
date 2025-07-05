@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // URL of the GitHub API endpoint for the user's profile
+    const str = 'https://api.github.com/users/hiteshchoudhary';
+
+    // Create a new XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
+
+    // Initialize a GET request to the API URL
+    xhr.open('GET', str);
+
+    // Define the event handler for whenever the readyState changes
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState); // Log current readyState for debugging
+
+        // When readyState is 4, the request is complete and response is ready
+        if (xhr.readyState === 4) {
+            // Parse the JSON response (string) into a JavaScript object
+            const response = JSON.parse(this.responseText);
+
+            // Log the number of followers from the parsed response object
+            console.log(response.followers);
+        }
+    }
+
+    // Send the HTTP request to the server
+    xhr.send();
+</script>
+</html>
